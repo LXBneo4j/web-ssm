@@ -21,7 +21,7 @@ import java.util.Map;
 
 /**
  * Created by lxb on 2017/5/6.
- *
+ * 用户功能控制
  */
 @Controller
 public class ActionController {
