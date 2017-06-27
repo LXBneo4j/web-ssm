@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>panel组件面板</title>
+<script type="text/javascript" src="../jquery-easyui-1.5/jquery.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.5/jquery.easyui.min.js"></script>
+<link rel="stylesheet"  type="text/css" href="../jquery-easyui-1.5/themes/default/easyui.css">
+<script type="text/javascript" src="../jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet"  type="text/css" href="../jquery-easyui-1.5/themes/icon.css">
+<script type="text/javascript">
+	function sendAjax(){
+		//code...............发送ajax请求，到后台抓取数据
+		//利用操作文档树的api动态的把数据添加到标签上
+		//可以自定义商业业务的逻辑
+		$("#p1").text("sb");
+	}
+	
+</script>
+</head>
+<body>
+	<!-- 
+		href属性可以引入外部的html内容到面板内显示：只引入了body内的内容
+		如果使用content属性 利用iframe标签来引入外部文件，要注意的是iframe引入的html是整个结构
+	 -->
+	<div id="p1" class="easyui-panel" data-options="width:300,height:300,title:'ooxx',closable:true,collapsible:true,iconCls:'icon-cut'
+		,tools:'#tt',href:'demo2.html'"
+	></div>
+	<div id="tt">
+		<a href="#" class="icon-add" onclick="javascript:sendAjax()"></a>
+		<a href="#" class="icon-edit" onclick="javascript:alert('edit')"></a>
+	</div>
+	<hr>
+	
+	<div id="p2"  data-options="width:300,height:300,title:'ooxx',closable:true,collapsible:true,iconCls:'icon-cut'
+		,tools:'#tt',content:'<iframe src=demo1.html frameborder=0 scrolling=no></iframe>'"
+	>
+	</div>
+	<script type="text/javascript">
+		$("#p2").panel({
+			onOpen:function(){
+				alert('我被打开了');
+			}
+		});
+		//easyui组件的事件和属性可以写在json对象，如果调用组件的方法，eg：
+		//调用组件的方法，组件的1参数 是方法的名称，组件2参数  方法的参数
+		
+		$("#p2").panel('setTitle','sbsb');
+		$("#p2").panel('resize',{
+			width:600,
+			height:600
+			
+		});
+		
+	</script>
+	<script type="text/javascript"></script>
+	<div id="tt">
+		<a href="#" class="icon-add" onclick="javascript:sendAjax()"></a>
+		<a href="#" class="icon-edit" onclick="javascript:alert('edit')"></a>
+	</div>
+</body>
+</html>

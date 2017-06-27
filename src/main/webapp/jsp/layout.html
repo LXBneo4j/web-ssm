@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>layout组件</title>
+<script type="text/javascript" src="../jquery-easyui-1.5/jquery.min.js"></script>
+<script type="text/javascript" src="../jquery-easyui-1.5/jquery.easyui.min.js"></script>
+<link rel="stylesheet"  type="text/css" href="../jquery-easyui-1.5/themes/default/easyui.css">
+<script type="text/javascript" src="../jquery-easyui-1.5/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet"  type="text/css" href="../jquery-easyui-1.5/themes/icon.css">
+<link rel="stylesheet"  type="text/css" href="../css/main1.css">
+<script type="text/javascript">
+	function addTag(title){
+		
+		if($("#tt").tabs("exists",title)){
+			//选中
+			$("#tt").tabs('select',title);
+			
+		}else{
+			//创建
+			$("#tt").tabs('add',{
+				title:title,
+				closable:true,
+				content:"<iframe src=demo3.html frameborder=0 scrolling=no style='width: 100%;height: 100%'></iframe>",
+				fit:true
+			});
+		}
+		
+		
+	}
+</script>
+</head>
+<body class="easyui-layout">   
+    <div data-options="region:'north',title:'lovo学校管理系统'" style="height:100px;"></div>   
+    <div data-options="region:'south'" style="height:50px;">
+    	<marquee>该系统版权归u27所有，未经允许不得套用</marquee>
+    </div>   
+    <div data-options="region:'west',title:'后台功能',iconCls:'icon-tip',collapsible:false"  style="width:200px;">
+	    <div id="aa" class="easyui-accordion" style="width:198px;height:200px;" fit=true>   
+		    <div title="系统管理" data-options="iconCls:'icon-save'" style="overflow:auto;background-color: #FFFFF0">   
+		        	<ul lang="e">
+		        		<a href="javascript:addTag('用户管理','url')"><li>用户管理</li></a>
+		        		<a href="javascript:addTag('角色管理')"><li>角色管理</li></a>
+		        		<a><li>权限管理</li></a>
+		        		<a><li>个人信息修改</li></a>
+		        	</ul>
+		    </div>   
+		     <div title="公告管理" data-options="iconCls:'icon-save'" style="overflow:auto;">   
+		        	<ul lang="e">
+		        		<li>用户管理</li>
+		        		<li>角色管理</li>
+		        		<li>权限管理</li>
+		        	</ul>
+		    </div>   
+		</div> 
+    
+    
+    </div>   
+    <div data-options="region:'center',title:'欢迎xxx使用系统'" style="padding:5px;background:#eee;" border=false>
+    	<div id="tt" class="easyui-tabs" style="width:500px;height:250px;" fit=true border=false >   
+			   <div title="欢迎页面" style="padding:20px;display:none;background-image: url('../images/bb.jpg');"></div>
+		</div> 
+    
+    
+    </div>   
+</body>
+</html>

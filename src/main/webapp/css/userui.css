@@ -1,0 +1,13 @@
+table[id="userinfoui"] td{
+	margin:0px 0px 0px 0px;
+	text-align:center;
+	height:60px;
+	width:20%;
+	border:1px solid  #CCFF99;
+} 
+table[id="userinfodialog"] tr{
+	height:30px;
+}
+table[id="userinfodialog"] input{
+	background-color: #CCCC99;
+}
